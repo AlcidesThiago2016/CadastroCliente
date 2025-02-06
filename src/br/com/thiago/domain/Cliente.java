@@ -12,14 +12,14 @@ public class Cliente {
     private String cidade;
     private String estado;
 
-    public Cliente(String nome, Long cpf, Long tel, String end, Integer numero, String estado, String cidade) {
+    public Cliente(String nome, String cpf, String tel, String end, String numero, String cidade, String estado) {
         this.nome = nome;
-        this.cpf = cpf;
-        this.tel = tel;
+        this.cpf = Long.parseLong(String.valueOf(cpf));
+        this.tel = Long.parseLong(String.valueOf(tel));
         this.end = end;
-        this.numero = numero;
-        this.estado = estado;
+        this.numero = Integer.parseInt(String.valueOf(numero));
         this.cidade = cidade;
+        this.estado = estado;
     }
 
     public String getNome() {
@@ -93,7 +93,7 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "br.com.thiago.domain.Cliente{" +
+        return "Cliente{" +
                 "cpf=" + cpf +
                 ", nome='" + nome + '\'' +
                 '}';
